@@ -10,6 +10,7 @@ public class CompoundInterestCalculator {
 
     //M: I agree. But on monday we "didn't know" these methods so I was trying to get the result without getters and setters.
     //Should I change now?
+    //A: I didn't meant getter or setters here. Ok, I'll re-word method names: readAmount(), readInterestRate(), etc. :)
     static int amount;
     static int interestRate;
     static int periodLength;
@@ -24,11 +25,16 @@ public class CompoundInterestCalculator {
     // Since in task's description this is not clearly stated, I'll let it slide this time :)
 
     //M: I tried to fix it. Is it behaving as should be right now?
+    //A: yup, correct!
 
     public static void main(String[] args) {
         //Do not declare your local variables separately from their initialization.
         //Variables should be declared where they're first used/needed.
         //M: Mindaugas told me completely opposite, I don't understand.
+        //A: The idea behind keeping variables and code that use them close is that when you do it, you'll see independent
+        //   pieces of code, which could be then further extracted into separate methods. It is hard to explain for me
+        //   in text. I could talk about it more in person. Remind me about tomorrow (or some time later), if you want
+        //   would like to hear more about it.
         int compoundFrequencyNumber;
         int arrayLength ;
         int index;
@@ -65,6 +71,8 @@ public class CompoundInterestCalculator {
             interestAmountAfterYear[index] = compoundingFrequency - amount;
 
             //M: Does this print correctly?
+            //A: Make it into a single line:
+            //System.out.printf("Interest amount after year %d: %.2f\n", index, interestAmountAfterYear[index]);
             System.out.print("Interest amount after year " + (index));
             System.out.printf(": %.2f\n", interestAmountAfterYear[index]);
         }
@@ -114,6 +122,7 @@ public class CompoundInterestCalculator {
                 return 2;
             //"case "Y":" can be removed, since "default:" is already returning "1".
             //M: Now I switched it to default if someone would like to run the code with 'Y' but don't know that 1 year is default. Or is it also wrong?
+            //A: This is ok. "case "Y":" could be removed altogether.
             default:
                 case "Y":
                 return 1;
